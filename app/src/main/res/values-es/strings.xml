@@ -1,22 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Zombicide</string>
 
-    <string name="button_back">Back</string>
-    <string name="button_save">Save</string>
+    <string name="button_back">Atrás</string>
+    <string name="button_save">Guardar</string>
 
-    <string name="label_saved_game_name">Saved Game Name</string>
-    <string name="label_no_saved_games_description">Oops!\nNo saved games found.\nTap + to add.</string>
+    <string name="label_saved_game_name">Nombre de la partida</string>
+    <string name="label_no_saved_games_description">Oops!\nNo se han encontrado partidas guardadas.\nToca + para añadir una.</string>
 
-    <string name="route_saved_games">Saved Games</string>
-    <string name="route_create_saved_game">New Game</string>
+    <string name="route_saved_games">Partidas guardadas</string>
+    <string name="route_create_saved_game">Nueva partida</string>
 
-    <string name="product_title_core">Zombicide 2nd Edition</string>
+    <string name="product_title_core">Zombicide 2ª edición</string>
     <string name="product_title_hendrix">Fort Hendrix</string>
     <string name="product_title_washington">Washington Z.C.</string>
-    <string name="product_title_paint_set">Paint Set</string>
+    <string name="product_title_paint_set">Set de pintura</string>
 
-    <string name="campaign_title_hendrix">Bars and stars</string>
-    <string name="campaign_title_washington">Infected State</string>
+    <string name="campaign_title_hendrix">Barras y estrellas</string>
+    <string name="campaign_title_washington">Estado infectado</string>
 
     <string name="character_name_amy">Amy</string>
     <string name="character_name_angelo">Angelo</string>
