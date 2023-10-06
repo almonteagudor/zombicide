@@ -1,5 +1,6 @@
 package com.montisgal.zombicide.data.saved_game
 
+import com.montisgal.zombicide.data.player_saved_game.SavedGameWithPlayers
 import kotlinx.coroutines.flow.Flow
 
 class OfflineSavedGameRepository(private val savedGameDao: SavedGameDao) : SavedGameRepository {
@@ -12,4 +13,6 @@ class OfflineSavedGameRepository(private val savedGameDao: SavedGameDao) : Saved
     override fun get(id: Int): Flow<SavedGame?> = savedGameDao.get(id)
 
     override fun getAll(): Flow<List<SavedGame>> = savedGameDao.getAll()
+
+    override fun getAllWithPlayers(): Flow<List<SavedGameWithPlayers>> = savedGameDao.getSavedGamesWithPlayers()
 }

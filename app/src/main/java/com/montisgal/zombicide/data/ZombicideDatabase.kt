@@ -4,12 +4,20 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.montisgal.zombicide.data.player.Player
+import com.montisgal.zombicide.data.player.PlayerDao
+import com.montisgal.zombicide.data.player_saved_game.PlayerSavedGameCrossRef
 import com.montisgal.zombicide.data.saved_game.SavedGame
 import com.montisgal.zombicide.data.saved_game.SavedGameDao
 
-@Database(entities = [SavedGame::class], version = 1, exportSchema = false)
+@Database(
+    entities = [SavedGame::class, Player::class, PlayerSavedGameCrossRef::class],
+    version = 2,
+    exportSchema = false
+)
 abstract class ZombicideDatabase : RoomDatabase() {
     abstract fun savedGameDao(): SavedGameDao
+    abstract  fun playerDao():PlayerDao
 
     companion object {
         @Volatile

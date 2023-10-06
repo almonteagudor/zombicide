@@ -4,7 +4,9 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Update
+import com.montisgal.zombicide.data.player_saved_game.SavedGameWithPlayers
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -18,9 +20,13 @@ interface SavedGameDao {
     @Delete
     suspend fun delete(savedGame: SavedGame)
 
-    @Query("SELECT * FROM saved_game WHERE id = :id")
+    @Query("SELECT * FROM saved_game WHERE saved_game_id = :id")
     fun get(id: Int): Flow<SavedGame>
 
     @Query("SELECT * FROM saved_game")
     fun getAll(): Flow<List<SavedGame>>
+
+    @Transaction
+    @Query("SELECT * FROM saved_game")
+    fun getSavedGamesWithPlayers(): Flow<List<SavedGameWithPlayers>>
 }

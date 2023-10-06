@@ -1,4 +1,4 @@
-package com.montisgal.zombicide.ui.screens.saved_game
+package com.montisgal.zombicide.ui.screens.player
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
@@ -29,36 +29,37 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.montisgal.zombicide.R
-import com.montisgal.zombicide.data.player_saved_game.SavedGameWithPlayers
+import com.montisgal.zombicide.data.player.Player
 import com.montisgal.zombicide.ui.ZombicideViewModelProvider
+
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SavedGamesScreen(
+fun PlayersScreen(
     modifier: Modifier = Modifier,
-    viewModel: SavedGamesViewModel = viewModel(factory = ZombicideViewModelProvider.factory),
+    viewModel: PlayersViewModel = viewModel(factory = ZombicideViewModelProvider.factory),
     onCreateClicked: () -> Unit,
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
     Scaffold(
         floatingActionButton = {
-            ZombicideFab(onClick = { onCreateClicked() })
+            PlayersFab(onClick = { onCreateClicked() })
         },
         modifier = modifier,
     ) {
-        if (uiState.savedGames.isEmpty()) {
+        if (uiState.players.isEmpty()) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
                 Text(
-                    text = stringResource(R.string.label_no_saved_games_description),
+                    text = stringResource(R.string.label_no_players_description),
                     textAlign = TextAlign.Center,
                     style = MaterialTheme.typography.titleLarge
                 )
             }
         } else {
-            SavedGameCardList(
-                savedGames = uiState.savedGames,
+            PlayerCardList(
+                players = uiState.players,
                 modifier = Modifier.fillMaxSize(),
             )
         }
@@ -66,21 +67,21 @@ fun SavedGamesScreen(
 }
 
 @Composable
-fun ZombicideFab(onClick: () -> Unit) {
+fun PlayersFab(onClick: () -> Unit) {
     FloatingActionButton(onClick = onClick) {
-        Icon(Icons.Filled.Add, "New Saved Game.")
+        Icon(Icons.Filled.Add, "New Player.")
     }
 }
 
 @Composable
-fun SavedGameCardList(savedGames: List<SavedGameWithPlayers>, modifier: Modifier = Modifier) {
+fun PlayerCardList(players: List<Player>, modifier: Modifier = Modifier) {
     LazyColumn(
         modifier = modifier.padding(dimensionResource(id = R.dimen.padding_small)),
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_small))
     ) {
-        items(savedGames) { savedGame ->
-            SavedGameCard(
-                savedGame = savedGame,
+        items(players) { player ->
+            PlayerCard(
+                player = player,
                 modifier = Modifier.fillMaxWidth()
             )
         }
@@ -88,7 +89,7 @@ fun SavedGameCardList(savedGames: List<SavedGameWithPlayers>, modifier: Modifier
 }
 
 @Composable
-fun SavedGameCard(savedGame: SavedGameWithPlayers, modifier: Modifier = Modifier) {
+fun PlayerCard(player: Player, modifier: Modifier = Modifier) {
     Card(modifier = modifier) {
         Column(
             modifier = Modifier
@@ -99,45 +100,8 @@ fun SavedGameCard(savedGame: SavedGameWithPlayers, modifier: Modifier = Modifier
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = savedGame.savedGame.name)
-                Text(text = savedGame.savedGame.updatedAt)
-            }
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Text(text = stringResource(id = savedGame.savedGame.campaign.title))
-                Text(text = if(savedGame.players.isEmpty()) "" else savedGame.players[0].name)
+                Text(text = player.name)
             }
         }
     }
 }
-
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun CampaignsScreenPreview() {
-//    SavedGameCardList(
-//        listOf(
-//            SavedGame(
-//                name = "Example campaign 1",
-//                campaign = Campaign.Washington,
-//                updatedAt = "14/01/1990"
-//            ),
-//            SavedGame(
-//                name = "Example campaign 2",
-//                campaign = Campaign.Hendrix,
-//                updatedAt = "14/01/1990"
-//            ),
-//            SavedGame(
-//                name = "Example campaign 3",
-//                campaign = Campaign.Washington,
-//                updatedAt = "14/01/1990"
-//            ),
-//            SavedGame(
-//                name = "Example campaign 4",
-//                campaign = Campaign.Hendrix,
-//                updatedAt = "14/01/1990"
-//            ),
-//        )
-//    )
-//}

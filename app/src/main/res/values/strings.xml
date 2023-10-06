@@ -5,7 +5,8 @@
     <string name="button_save">Save</string>
 
     <string name="label_saved_game_name">Saved Game Name</string>
-    <string name="label_no_saved_games_description">Oops!\nNo saved games found.\nTap + to add.</string>
+    <string name="label_no_saved_games_description">Oops! No saved games found. Tap + to add.</string>
+    <string name="label_no_players_description">Oops!\nNo players found.\nTap + to add.</string>
 
     <string name="route_saved_games">Saved Games</string>
     <string name="route_create_saved_game">New Game</string>
@@ -43,4 +44,5 @@
     <string name="character_name_tiger_sam">Tiger Sam</string>
     <string name="character_name_wanda">Wanda</string>
     <string name="character_name_wayne">Wayne</string>
+    <string name="route_players">Players</string>
 </resources>

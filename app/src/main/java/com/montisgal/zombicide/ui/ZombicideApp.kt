@@ -21,12 +21,14 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.montisgal.zombicide.R
+import com.montisgal.zombicide.ui.screens.player.PlayersScreen
 import com.montisgal.zombicide.ui.screens.saved_game.SavedGamesScreen
 import com.montisgal.zombicide.ui.screens.saved_game.CreateSavedGameScreen
 
 enum class ZombicideRoute(@StringRes val title: Int) {
     SavedGames(title = R.string.route_saved_games),
     CreateSavedGame(title = R.string.route_create_saved_game),
+    Players(title = R.string.route_players)
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -52,7 +54,7 @@ fun ZombicideApp() {
                 .padding(paddingValues)
                 .fillMaxSize(),
             navController = navController,
-            startDestination = ZombicideRoute.SavedGames.name,
+            startDestination = ZombicideRoute.Players.name,
         ) {
             composable(route = ZombicideRoute.SavedGames.name) {
                 SavedGamesScreen(
@@ -64,6 +66,12 @@ fun ZombicideApp() {
                 CreateSavedGameScreen(
                     modifier = Modifier.fillMaxSize(),
                     onSavedGameCreated = {navController.navigate(ZombicideRoute.SavedGames.name)}
+                )
+            }
+            composable(route = ZombicideRoute.Players.name) {
+                PlayersScreen(
+                    onCreateClicked = { /*navController.navigate(ZombicideRoute.CreateSavedGame.name) */},
+                    modifier = Modifier.fillMaxSize(),
                 )
             }
         }
