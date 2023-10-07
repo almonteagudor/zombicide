@@ -5,11 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.montisgal.zombicide.data.campaign.Campaign
 
-
 @Entity(tableName = "saved_game")
 data class SavedGame(
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name ="saved_game_id")
+    @ColumnInfo(name = "saved_game_id")
     val savedGameId: Int = 0,
 
     @ColumnInfo(name = "name")

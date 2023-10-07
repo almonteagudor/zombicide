@@ -15,6 +15,7 @@ class ZombicideDataContainer(private val context: Context) : ZombicideContainer 
     override val savedGameRepository: SavedGameRepository by lazy {
         OfflineSavedGameRepository(ZombicideDatabase.getDatabase(context).savedGameDao())
     }
+
     override val playerRepository: PlayerRepository by lazy {
         OfflinePlayerRepository(ZombicideDatabase.getDatabase(context).playerDao())
     }

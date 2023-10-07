@@ -29,7 +29,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.montisgal.zombicide.R
-import com.montisgal.zombicide.data.player_saved_game.SavedGameWithPlayers
+import com.montisgal.zombicide.data.saved_game.SavedGameWithPlayers
 import com.montisgal.zombicide.ui.ZombicideViewModelProvider
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -112,32 +112,3 @@ fun SavedGameCard(savedGame: SavedGameWithPlayers, modifier: Modifier = Modifier
         }
     }
 }
-
-//@Preview(showBackground = true, showSystemUi = true)
-//@Composable
-//fun CampaignsScreenPreview() {
-//    SavedGameCardList(
-//        listOf(
-//            SavedGame(
-//                name = "Example campaign 1",
-//                campaign = Campaign.Washington,
-//                updatedAt = "14/01/1990"
-//            ),
-//            SavedGame(
-//                name = "Example campaign 2",
-//                campaign = Campaign.Hendrix,
-//                updatedAt = "14/01/1990"
-//            ),
-//            SavedGame(
-//                name = "Example campaign 3",
-//                campaign = Campaign.Washington,
-//                updatedAt = "14/01/1990"
-//            ),
-//            SavedGame(
-//                name = "Example campaign 4",
-//                campaign = Campaign.Hendrix,
-//                updatedAt = "14/01/1990"
-//            ),
-//        )
-//    )
-//}

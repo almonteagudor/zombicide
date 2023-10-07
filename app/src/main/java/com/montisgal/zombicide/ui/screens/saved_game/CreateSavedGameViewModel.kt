@@ -36,11 +36,9 @@ class CreateSavedGameViewModel(private val createSavedGameUseCase: CreateSavedGa
                     name = _uiState.value.name,
                     campaign = _uiState.value.campaign,
                     updatedAt = DateFormat.getDateInstance().format(GregorianCalendar().time)),
-
                 )
             onSavedGameCreated()
         }
-
     }
 }
 

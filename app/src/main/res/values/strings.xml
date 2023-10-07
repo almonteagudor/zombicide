@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Zombicide</string>
 
@@ -10,6 +11,7 @@
 
     <string name="route_saved_games">Saved Games</string>
     <string name="route_create_saved_game">New Game</string>
+    <string name="route_players">Players</string>
 
     <string name="product_title_core">Zombicide 2nd Edition</string>
     <string name="product_title_hendrix">Fort Hendrix</string>
@@ -44,5 +46,4 @@
     <string name="character_name_tiger_sam">Tiger Sam</string>
     <string name="character_name_wanda">Wanda</string>
     <string name="character_name_wayne">Wayne</string>
-    <string name="route_players">Players</string>
 </resources>

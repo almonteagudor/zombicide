@@ -11,13 +11,17 @@ import com.montisgal.zombicide.data.saved_game.SavedGame
 import com.montisgal.zombicide.data.saved_game.SavedGameDao
 
 @Database(
-    entities = [SavedGame::class, Player::class, PlayerSavedGameCrossRef::class],
     version = 2,
-    exportSchema = false
+    exportSchema = false,
+    entities = [
+        SavedGame::class,
+        Player::class,
+        PlayerSavedGameCrossRef::class,
+    ],
 )
 abstract class ZombicideDatabase : RoomDatabase() {
     abstract fun savedGameDao(): SavedGameDao
-    abstract  fun playerDao():PlayerDao
+    abstract fun playerDao(): PlayerDao
 
     companion object {
         @Volatile

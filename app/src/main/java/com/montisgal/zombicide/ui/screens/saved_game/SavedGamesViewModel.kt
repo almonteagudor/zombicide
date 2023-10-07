@@ -2,7 +2,7 @@ package com.montisgal.zombicide.ui.screens.saved_game
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montisgal.zombicide.data.player_saved_game.SavedGameWithPlayers
+import com.montisgal.zombicide.data.saved_game.SavedGameWithPlayers
 import com.montisgal.zombicide.domain.saved_game.GetSavedGamesWithPlayersUseCase
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.map

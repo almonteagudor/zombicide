@@ -32,7 +32,6 @@ import com.montisgal.zombicide.R
 import com.montisgal.zombicide.data.player.Player
 import com.montisgal.zombicide.ui.ZombicideViewModelProvider
 
-
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

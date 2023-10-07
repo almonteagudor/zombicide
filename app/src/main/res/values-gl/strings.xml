@@ -7,9 +7,11 @@
 
     <string name="label_saved_game_name">Nome da partida</string>
     <string name="label_no_saved_games_description">Ups! Non se atoparon partidas gardadas. Toca + para engadir unha.</string>
+    <string name="label_no_players_description">Ups! Non se atoparon xogadores. Toca + para engadir un.</string>
 
     <string name="route_saved_games">Partidas gardadas</string>
     <string name="route_create_saved_game">Nova partida</string>
+    <string name="route_players">Xogadores</string>
 
     <string name="product_title_core">Zombicide 2ª edición</string>
     <string name="product_title_hendrix">Fort Hendrix</string>
@@ -44,6 +46,4 @@
     <string name="character_name_tiger_sam">Tiger Sam</string>
     <string name="character_name_wanda">Wanda</string>
     <string name="character_name_wayne">Wayne</string>
-    <string name="label_no_players_description">Ups! Non se atoparon xogadores. Toca + para engadir un.</string>
-    <string name="route_players">Xogadores</string>
 </resources>

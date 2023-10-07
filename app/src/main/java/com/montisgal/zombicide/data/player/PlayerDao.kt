@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PlayerDao {
-
     @Insert
     suspend fun insert(player: Player)
 
@@ -24,5 +23,4 @@ interface PlayerDao {
 
     @Query("SELECT * FROM player")
     fun getAll(): Flow<List<Player>>
-
 }

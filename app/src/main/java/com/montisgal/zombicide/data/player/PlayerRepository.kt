@@ -12,5 +12,4 @@ interface PlayerRepository {
     fun get(id: Int): Flow<Player?>
 
     fun getAll(): Flow<List<Player>>
-
 }

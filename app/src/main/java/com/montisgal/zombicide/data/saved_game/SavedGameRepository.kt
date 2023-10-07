@@ -1,6 +1,5 @@
 package com.montisgal.zombicide.data.saved_game
 
-import com.montisgal.zombicide.data.player_saved_game.SavedGameWithPlayers
 import kotlinx.coroutines.flow.Flow
 
 interface SavedGameRepository {
