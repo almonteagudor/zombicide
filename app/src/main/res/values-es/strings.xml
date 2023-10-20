@@ -2,16 +2,17 @@
 <resources>
     <string name="app_name">Zombicide</string>
 
+    <string name="route_saved_games">Partidas guardadas</string>
+    <string name="route_create_saved_game">Nueva partida</string>
+    <string name="route_players">Jugadores</string>
+
     <string name="button_back">Atrás</string>
     <string name="button_save">Guardar</string>
 
     <string name="label_saved_game_name">Nombre de la partida</string>
     <string name="label_no_saved_games_description">Ups! No se han encontrado partidas guardadas. Toca + para añadir una.</string>
     <string name="label_no_players_description">Ups! No se han encontrado jugadores. Toca + para añadir uno.</string>
-
-    <string name="route_saved_games">Partidas guardadas</string>
-    <string name="route_create_saved_game">Nueva partida</string>
-    <string name="route_players">Jugadores</string>
+    <string name="label_new_saved_game">Nueva partida guardada</string>
 
     <string name="product_title_core">Zombicide 2ª edición</string>
     <string name="product_title_hendrix">Fort Hendrix</string>

@@ -3,7 +3,9 @@ package com.montisgal.zombicide
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.montisgal.zombicide.ui.ZombicideApp
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
+import com.montisgal.zombicide.ui.NavManager
 import com.montisgal.zombicide.ui.theme.ZombicideTheme
 
 class MainActivity : ComponentActivity() {
@@ -11,7 +13,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ZombicideTheme {
-                ZombicideApp()
+                NavManager(modifier = Modifier.fillMaxSize())
             }
         }
     }

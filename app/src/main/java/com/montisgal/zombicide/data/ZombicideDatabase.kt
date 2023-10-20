@@ -11,7 +11,7 @@ import com.montisgal.zombicide.data.saved_game.SavedGame
 import com.montisgal.zombicide.data.saved_game.SavedGameDao
 
 @Database(
-    version = 2,
+    version = 1,
     exportSchema = false,
     entities = [
         SavedGame::class,
