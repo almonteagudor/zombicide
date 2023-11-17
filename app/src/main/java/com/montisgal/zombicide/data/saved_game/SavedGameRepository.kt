@@ -1,5 +1,6 @@
 package com.montisgal.zombicide.data.saved_game
 
+import com.montisgal.zombicide.domain.saved_game.SavedGame
 import kotlinx.coroutines.flow.Flow
 
 interface SavedGameRepository {
@@ -12,6 +13,4 @@ interface SavedGameRepository {
     fun get(id: Int): Flow<SavedGame?>
 
     fun getAll(): Flow<List<SavedGame>>
-
-    fun getAllWithPlayers() : Flow<List<SavedGameWithPlayers>>
 }

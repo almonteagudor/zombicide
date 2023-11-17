@@ -4,28 +4,23 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
-import androidx.room.Transaction
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SavedGameDao {
     @Insert
-    suspend fun insert(savedGame: SavedGame)
+    suspend fun insert(savedGame: SavedGameEntity)
 
     @Update
-    suspend fun update(savedGame: SavedGame)
+    suspend fun update(savedGame: SavedGameEntity)
 
     @Delete
-    suspend fun delete(savedGame: SavedGame)
+    suspend fun delete(savedGame: SavedGameEntity)
 
-    @Query("SELECT * FROM saved_game WHERE saved_game_id = :id")
-    fun get(id: Int): Flow<SavedGame>
+    @Query("SELECT * FROM saved_games WHERE id = :id")
+    fun get(id: Int): Flow<SavedGameEntity>
 
-    @Query("SELECT * FROM saved_game")
-    fun getAll(): Flow<List<SavedGame>>
-
-    @Transaction
-    @Query("SELECT * FROM saved_game")
-    fun getSavedGamesWithPlayers(): Flow<List<SavedGameWithPlayers>>
+    @Query("SELECT * FROM saved_games")
+    fun getAll(): Flow<List<SavedGameEntity>>
 }

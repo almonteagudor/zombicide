@@ -1,6 +1,5 @@
 package com.montisgal.zombicide.domain.saved_game
 
-import com.montisgal.zombicide.data.saved_game.SavedGame
 import com.montisgal.zombicide.data.saved_game.SavedGameRepository
 import kotlinx.coroutines.flow.Flow
 

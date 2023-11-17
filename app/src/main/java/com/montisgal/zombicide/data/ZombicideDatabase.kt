@@ -7,14 +7,14 @@ import androidx.room.RoomDatabase
 import com.montisgal.zombicide.data.player.Player
 import com.montisgal.zombicide.data.player.PlayerDao
 import com.montisgal.zombicide.data.player_saved_game.PlayerSavedGameCrossRef
-import com.montisgal.zombicide.data.saved_game.SavedGame
+import com.montisgal.zombicide.data.saved_game.SavedGameEntity
 import com.montisgal.zombicide.data.saved_game.SavedGameDao
 
 @Database(
-    version = 1,
+    version = 2,
     exportSchema = false,
     entities = [
-        SavedGame::class,
+        SavedGameEntity::class,
         Player::class,
         PlayerSavedGameCrossRef::class,
     ],

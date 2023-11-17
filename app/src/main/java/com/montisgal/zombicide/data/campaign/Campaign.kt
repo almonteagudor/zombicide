@@ -6,5 +6,11 @@ import com.montisgal.zombicide.data.product.Product
 
 enum class Campaign(@StringRes val title: Int, val product: Product) {
     Washington(title = R.string.campaign_title_washington, product = Product.Washington),
-    Hendrix(title = R.string.campaign_title_hendrix, product = Product.Hendrix),
+    Hendrix(title = R.string.campaign_title_hendrix, product = Product.Hendrix);
+
+    companion object {
+        fun fromId(title: Int): Campaign? {
+            return values().find { it.title == title }
+        }
+    }
 }
