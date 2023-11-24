@@ -66,5 +66,5 @@ fun ZombicideAddFab(onClick: () -> Unit, contentDescription: String) {
 fun ZombicideAppBarPreview() {
     ZombicideAppBar(
         title = { Text(text = stringResource(id = R.string.app_name)) },
-        )
+    )
 }

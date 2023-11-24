@@ -19,5 +19,11 @@ enum class Product(val id: Int, @StringRes val title: Int) {
     PaintSet(
         id = 4,
         title = R.string.product_title_paint_set
-    ),
+    );
+
+    companion object {
+        fun fromId(id: Int): Product? {
+            return Product.values().find { it.id == id }
+        }
+    }
 }

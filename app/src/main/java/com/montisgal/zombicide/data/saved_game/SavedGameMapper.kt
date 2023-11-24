@@ -17,7 +17,7 @@ class SavedGameMapper {
         return SavedGameEntity(
             id = domainModel.id,
             name = domainModel.name,
-            campaignId = domainModel.campaign.title,
+            campaignId = domainModel.campaign.id,
             updatedAt = domainModel.updatedAt,
         )
     }
