@@ -1,6 +1,6 @@
 package com.montisgal.zombicide.data.saved_game
 
-import com.montisgal.zombicide.data.campaign.Campaign
+import com.montisgal.zombicide.domain.campaign.Campaign
 import com.montisgal.zombicide.domain.saved_game.SavedGame
 
 class SavedGameMapper {

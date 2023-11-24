@@ -29,7 +29,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.montisgal.zombicide.R
-import com.montisgal.zombicide.data.player.Player
+import com.montisgal.zombicide.domain.player.Player
 import com.montisgal.zombicide.ui.ZombicideViewModelProvider
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")

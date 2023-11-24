@@ -5,13 +5,13 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.montisgal.zombicide.ZombicideApplication
-import com.montisgal.zombicide.domain.player.GetPlayersUseCase
-import com.montisgal.zombicide.domain.saved_game.CreateSavedGameUseCase
-import com.montisgal.zombicide.domain.saved_game.DeleteSavedGamesUseCase
-import com.montisgal.zombicide.domain.saved_game.GetSavedGamesUseCase
+import com.montisgal.zombicide.domain.player.use_case.GetPlayersUseCase
+import com.montisgal.zombicide.domain.saved_game.use_case.CreateSavedGameUseCase
+import com.montisgal.zombicide.domain.saved_game.use_case.DeleteSavedGamesUseCase
+import com.montisgal.zombicide.domain.saved_game.use_case.GetSavedGamesUseCase
 import com.montisgal.zombicide.ui.screens.player.PlayersViewModel
-import com.montisgal.zombicide.ui.screens.saved_game.CreateSavedGameViewModel
-import com.montisgal.zombicide.ui.screens.saved_game.SavedGamesViewModel
+import com.montisgal.zombicide.ui.screens.saved_game.create_saved_game_screen.CreateSavedGameViewModel
+import com.montisgal.zombicide.ui.screens.saved_game.saved_games_screen.SavedGamesViewModel
 
 object ZombicideViewModelProvider {
     val factory = viewModelFactory {

@@ -1,10 +1,10 @@
-package com.montisgal.zombicide.ui.screens.saved_game
+package com.montisgal.zombicide.ui.screens.saved_game.saved_games_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montisgal.zombicide.domain.saved_game.DeleteSavedGamesUseCase
+import com.montisgal.zombicide.domain.saved_game.use_case.DeleteSavedGamesUseCase
 import com.montisgal.zombicide.domain.saved_game.SavedGame
-import com.montisgal.zombicide.domain.saved_game.GetSavedGamesUseCase
+import com.montisgal.zombicide.domain.saved_game.use_case.GetSavedGamesUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map

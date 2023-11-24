@@ -20,9 +20,9 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.montisgal.zombicide.R
-import com.montisgal.zombicide.data.campaign.Campaign
+import com.montisgal.zombicide.domain.campaign.Campaign
 import com.montisgal.zombicide.domain.saved_game.SavedGame
-import com.montisgal.zombicide.ui.screens.saved_game.SavedGamesViewModel.SavedGameUIModel
+import com.montisgal.zombicide.ui.screens.saved_game.saved_games_screen.SavedGamesViewModel.SavedGameUIModel
 
 @Composable
 fun SavedGameCardList(

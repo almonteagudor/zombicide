@@ -1,23 +1,20 @@
 package com.montisgal.zombicide.data
 
 import android.content.Context
-import com.montisgal.zombicide.data.player.OfflinePlayerRepository
-import com.montisgal.zombicide.data.player.PlayerRepository
-import com.montisgal.zombicide.data.saved_game.OfflineSavedGameRepository
+import com.montisgal.zombicide.data.player.PlayerMapper
 import com.montisgal.zombicide.data.saved_game.SavedGameMapper
-import com.montisgal.zombicide.data.saved_game.SavedGameRepository
 
 interface ZombicideContainer {
-    val savedGameRepository: SavedGameRepository
-    val playerRepository: PlayerRepository
+    val savedGameRepository: com.montisgal.zombicide.domain.saved_game.SavedGameRepository
+    val playerRepository: com.montisgal.zombicide.domain.player.PlayerRepository
 }
 
 class ZombicideDataContainer(private val context: Context) : ZombicideContainer {
-    override val savedGameRepository: SavedGameRepository by lazy {
-        OfflineSavedGameRepository(ZombicideDatabase.getDatabase(context).savedGameDao(), SavedGameMapper())
+    override val savedGameRepository: com.montisgal.zombicide.domain.saved_game.SavedGameRepository by lazy {
+        com.montisgal.zombicide.data.saved_game.SavedGameRepository(ZombicideDatabase.getDatabase(context).savedGameDao(), SavedGameMapper())
     }
 
-    override val playerRepository: PlayerRepository by lazy {
-        OfflinePlayerRepository(ZombicideDatabase.getDatabase(context).playerDao())
+    override val playerRepository: com.montisgal.zombicide.domain.player.PlayerRepository by lazy {
+        com.montisgal.zombicide.data.player.PlayerRepository(ZombicideDatabase.getDatabase(context).playerDao(), PlayerMapper())
     }
 }

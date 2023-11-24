@@ -1,15 +1,37 @@
 package com.montisgal.zombicide.data.player
 
+import com.montisgal.zombicide.domain.player.Player
+import com.montisgal.zombicide.domain.player.PlayerRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
-interface PlayerRepository {
-    suspend fun insert(player: Player)
+class PlayerRepository(
+    private val dao: PlayerDao,
+    private val mapper: PlayerMapper,
+) : PlayerRepository {
+    override suspend fun insert(player: Player) {
+        return dao.insert(mapper.fromDomainToEntity(player))
+    }
 
-    suspend fun update(player: Player)
+    override suspend fun update(player: Player) {
+        return dao.update(mapper.fromDomainToEntity(player))
+    }
 
-    suspend fun delete(player: Player)
+    override suspend fun delete(player: Player) {
+        return dao.delete(mapper.fromDomainToEntity(player))
+    }
 
-    fun get(id: Int): Flow<Player?>
+    override fun get(id: Int): Flow<Player?> {
+        return dao.get(id).map {
+            mapper.fromEntityToDomain(it)
+        }
+    }
 
-    fun getAll(): Flow<List<Player>>
+    override fun getAll(): Flow<List<Player>> {
+        return dao.getAll().map { entities ->
+            entities.map {
+                mapper.fromEntityToDomain(it)
+            }
+        }
+    }
 }

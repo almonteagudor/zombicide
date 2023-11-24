@@ -10,17 +10,17 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PlayerDao {
     @Insert
-    suspend fun insert(player: Player)
+    suspend fun insert(player: PlayerEntity)
 
     @Update
-    suspend fun update(player: Player)
+    suspend fun update(player: PlayerEntity)
 
     @Delete
-    suspend fun delete(player: Player)
+    suspend fun delete(player: PlayerEntity)
 
-    @Query("SELECT * FROM player WHERE player_id = :id")
-    fun get(id: Int): Flow<Player>
+    @Query("SELECT * FROM player WHERE id = :id")
+    fun get(id: Int): Flow<PlayerEntity>
 
     @Query("SELECT * FROM player")
-    fun getAll(): Flow<List<Player>>
+    fun getAll(): Flow<List<PlayerEntity>>
 }

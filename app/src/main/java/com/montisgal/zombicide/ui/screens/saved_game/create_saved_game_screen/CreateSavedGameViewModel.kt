@@ -1,10 +1,10 @@
-package com.montisgal.zombicide.ui.screens.saved_game
+package com.montisgal.zombicide.ui.screens.saved_game.create_saved_game_screen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.montisgal.zombicide.data.campaign.Campaign
+import com.montisgal.zombicide.domain.campaign.Campaign
 import com.montisgal.zombicide.domain.saved_game.SavedGame
-import com.montisgal.zombicide.domain.saved_game.CreateSavedGameUseCase
+import com.montisgal.zombicide.domain.saved_game.use_case.CreateSavedGameUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
@@ -18,33 +18,30 @@ class CreateSavedGameViewModel(
     private val _uiState = MutableStateFlow(CreateSavedGameUiState())
     val uiState = _uiState.asStateFlow()
 
-    fun onNameChange(name: String) {
-        _uiState.update { currentUiState ->
-            currentUiState.copy(name = name)
-        }
+    fun onSavedGameNameChange(savedGameName: String) {
+        _uiState.update { it.copy(savedGameName = savedGameName) }
     }
 
-    fun onCampaignChange(campaign: Campaign) {
-        _uiState.update { currentUiState ->
-            currentUiState.copy(campaign = campaign)
-        }
+    fun onSavedGameCampaignChange(savedGameCampaign: Campaign) {
+        _uiState.update { it.copy(savedGameCampaign = savedGameCampaign) }
     }
 
-    fun createCampaign(onSavedGameCreated: () -> Unit) {
+    fun createSavedGame(onSavedGameCreated: () -> Unit = {}) {
         viewModelScope.launch {
             createSavedGameUseCase(
                 SavedGame(
-                    name = _uiState.value.name,
-                    campaign = _uiState.value.campaign,
+                    name = _uiState.value.savedGameName,
+                    campaign = _uiState.value.savedGameCampaign,
                     updatedAt = DateFormat.getDateInstance().format(GregorianCalendar().time)
                 ),
             )
+
             onSavedGameCreated()
         }
     }
-}
 
-data class CreateSavedGameUiState(
-    val name: String = "",
-    val campaign: Campaign = Campaign.Washington,
-)
+    data class CreateSavedGameUiState(
+        val savedGameName: String = "",
+        val savedGameCampaign: Campaign = Campaign.Washington,
+    )
+}

@@ -1,7 +1,7 @@
-package com.montisgal.zombicide.domain.player
+package com.montisgal.zombicide.domain.player.use_case
 
-import com.montisgal.zombicide.data.player.Player
-import com.montisgal.zombicide.data.player.PlayerRepository
+import com.montisgal.zombicide.domain.player.Player
+import com.montisgal.zombicide.domain.player.PlayerRepository
 import kotlinx.coroutines.flow.Flow
 
 class GetPlayersUseCase(private val playerRepository: PlayerRepository) {

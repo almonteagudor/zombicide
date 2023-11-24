@@ -1,6 +1,6 @@
 package com.montisgal.zombicide.domain.saved_game
 
-import com.montisgal.zombicide.data.campaign.Campaign
+import com.montisgal.zombicide.domain.campaign.Campaign
 
 data class SavedGame(
     val id: Int = 0,
