@@ -1,0 +1,35 @@
+services:
+  nginx:
+    build:
+      context: ./docker/nginx/nginx_1-25-2
+    container_name: zombicide-nginx
+    depends_on:
+      - php
+    ports:
+      - '80:80'
+  php:
+    build:
+      context: ./docker/php/php_8-2
+    container_name: zombicide-php
+    depends_on:
+      - mysql
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - '9000:9000'
+    volumes:
+      - '.:/var/www/html'
+  mysql:
+    container_name: zombicide-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: zombicide
+      MYSQL_USER: montisgal
+      MYSQL_PASSWORD: montisgal
+    image: mysql:8.2.0
+    ports:
+      - "3306:3306"
+    volumes:
+      - zombicide-db:/var/lib/mysql
+volumes:
+  zombicide-db:
